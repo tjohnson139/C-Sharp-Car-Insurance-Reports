@@ -1,7 +1,18 @@
-﻿
-@{
-    ViewBag.Title = "Quote";
-}
-
-<h2>Quote</h2>
-
+﻿@using System.Web.Mvc
+<div class="row no-gutters" m-3>
+    <div class="card col-sm-12 col-md-10 col-lg-6 mx-auto shadow">
+        <div class="card-header text-center">
+            <h5 class="m-0">Your Quote</h5>
+        </div>
+        <div class="card-body text-center">
+            Based on the information you provided, You'll be paying:
+            <div class="text-lg-center text-black-50">
+                <h1>$@ViewData["quote"] per month</h1>
+                @if (Convert.ToInt32(ViewData["quote"]) > 200)
+                {
+                    <a href="https://trimet.org/hop/fares.htm#monthpass">Uh... Wow. $@ViewData["quote"]? Ya know... Trimet's only $100 a month...</a>
+                }
+            </div>
+        </div>
+    </div>
+</div>
